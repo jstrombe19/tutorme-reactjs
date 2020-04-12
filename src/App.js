@@ -19,12 +19,7 @@ export default class App extends Component {
             <h1 id="landing-title">TutorMe</h1>
           </header>
           <Switch>
-            <PrivateRoute exact 
-              path='/' 
-              returningUser={this.state.returningUser} 
-              newUser={this.newUser} 
-              existingUser={this.existingUser}
-            />
+            <PrivateRoute exact path='/' />
             <Route path='/login' render={(props) => <Login {...props} login={this.login}/>} />
             <Route path='/signup' render={(props) => <Signup {...props} signup={this.signup}/>} />
             <Route render={() => <Redirect to='/' /> } />
